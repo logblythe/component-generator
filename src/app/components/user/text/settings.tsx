@@ -18,15 +18,6 @@ export const Settings = () => {
                 <Slider defaultValue={[18]}
                         onValueChange={(value) => setProp((props: PropTypes) => (props.fontSize = String(value[0])))}/>
             </Flex>
-            <Text>Border Radius</Text>
-            <TextField.Root>
-                <TextField.Input type="number" placeholder="Border radius"
-                                 onChange={(e) => {
-                                     const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.borderRadius = value));
-                                 }}
-                />
-            </TextField.Root>
             <Text>Text Color</Text>
             <TextField.Root>
                 <TextField.Input type="color" placeholder="Text color"
@@ -36,40 +27,39 @@ export const Settings = () => {
                                  }}
                 />
             </TextField.Root>
-
-            <Text>Background Color</Text>
+            <Text>Margin Top</Text>
             <TextField.Root>
-                <TextField.Input type="color" placeholder="Background color"
+                <TextField.Input type="number" placeholder="Margin top"
                                  onChange={(e) => {
                                      const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.backgroundColor = value));
+                                     setProp((props: PropTypes) => (props.marginTop = value));
                                  }}
                 />
             </TextField.Root>
-            <Text>Border Color</Text>
+            <Text>Margin Right</Text>
             <TextField.Root>
-                <TextField.Input type="color" placeholder="Border color"
+                <TextField.Input type="number" placeholder="Margin right"
                                  onChange={(e) => {
                                      const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.borderColor = value));
+                                     setProp((props: PropTypes) => (props.marginRight = value));
                                  }}
                 />
             </TextField.Root>
-            <Text>Padding x-axis</Text>
+            <Text>Margin Bottom</Text>
             <TextField.Root>
-                <TextField.Input type="number" placeholder="Padding top"
+                <TextField.Input type="number" placeholder="Margin bottom"
                                  onChange={(e) => {
                                      const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.paddingX = value));
+                                     setProp((props: PropTypes) => (props.marginBottom = value));
                                  }}
                 />
             </TextField.Root>
-            <Text>Padding y-axis</Text>
+            <Text>Margin Left</Text>
             <TextField.Root>
-                <TextField.Input type="number" placeholder="Padding right"
+                <TextField.Input type="number" placeholder="Margin left"
                                  onChange={(e) => {
                                      const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.paddingY = value));
+                                     setProp((props: PropTypes) => (props.marginLeft = value));
                                  }}
                 />
             </TextField.Root>

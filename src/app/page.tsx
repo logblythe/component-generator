@@ -22,7 +22,7 @@ export default function Page() {
           <Flex className="bg-green-200">
             <Frame>
               <Element is={Container} canvas>
-                {/* <Button>Button</Button> */}
+                <Button>Button</Button>
                 <Text>Text</Text>
               </Element>
             </Frame>
