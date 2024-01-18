@@ -1,6 +1,7 @@
 import {useNode} from "@craftjs/core";
-import {Box, Text, TextField, RadioGroup, Flex, Select, Slider} from "@radix-ui/themes";
+import {Box, Flex, RadioGroup, Select, Slider,Text, TextField} from "@radix-ui/themes";
 
+import {SettingItem} from "../settings";
 import {PropTypes} from "./index";
 
 export const Settings = () => {
@@ -13,56 +14,66 @@ export const Settings = () => {
 
     return (
         <Box>
-            <Text>Font Size</Text>
-            <Flex direction="column" style={{height: 15}}>
-                <Slider defaultValue={[18]}
-                        onValueChange={(value) => setProp((props: PropTypes) => (props.fontSize = String(value[0])))}/>
-            </Flex>
-            <Text>Text Color</Text>
-            <TextField.Root>
-                <TextField.Input type="color" placeholder="Text color"
-                                 onChange={(e) => {
-                                     const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.textColor = value));
-                                 }}
-                />
-            </TextField.Root>
-            <Text>Margin Top</Text>
-            <TextField.Root>
-                <TextField.Input type="number" placeholder="Margin top"
-                                 onChange={(e) => {
-                                     const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.marginTop = value));
-                                 }}
-                />
-            </TextField.Root>
-            <Text>Margin Right</Text>
-            <TextField.Root>
-                <TextField.Input type="number" placeholder="Margin right"
-                                 onChange={(e) => {
-                                     const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.marginRight = value));
-                                 }}
-                />
-            </TextField.Root>
-            <Text>Margin Bottom</Text>
-            <TextField.Root>
-                <TextField.Input type="number" placeholder="Margin bottom"
-                                 onChange={(e) => {
-                                     const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.marginBottom = value));
-                                 }}
-                />
-            </TextField.Root>
-            <Text>Margin Left</Text>
-            <TextField.Root>
-                <TextField.Input type="number" placeholder="Margin left"
-                                 onChange={(e) => {
-                                     const value = e.target.value;
-                                     setProp((props: PropTypes) => (props.marginLeft = value));
-                                 }}
-                />
-            </TextField.Root>
+            <SettingItem propKey="fontSize" type="slider" label="Font Size"/>
+            <SettingItem propKey="textColor" type="color" label="Text Color"/>
+            <SettingItem propKey="marginTop" type="number" label="Margin Top"/>
+            <SettingItem propKey="marginRight" type="number" label="Margin Right"/>
+            <SettingItem propKey="marginBottom" type="number" label="Margin Bottom"/>
+            <SettingItem propKey="marginLeft" type="number" label="Margin Left"/>
+
+            {/*<Text>Font Size</Text>*/}
+            {/*<Flex direction="column" style={{height: 15}}>*/}
+            {/*    <Slider defaultValue={[18]}*/}
+            {/*            onValueChange={(value) => setProp((props: PropTypes) => (props.fontSize = String(value[0])))}/>*/}
+            {/*</Flex>*/}
+            {/**/}
+            {/*<Text>Text Color</Text>*/}
+            {/*<TextField.Root>*/}
+            {/*    <TextField.Input type="color" placeholder="Text color"*/}
+            {/*                     onChange={(e) => {*/}
+            {/*                         const value = e.target.value;*/}
+            {/*                         setProp((props: PropTypes) => (props.textColor = value));*/}
+            {/*                     }}*/}
+            {/*    />*/}
+            {/*</TextField.Root>*/}
+            {/**/}
+            {/*<Text>Margin Top</Text>*/}
+            {/*<TextField.Root>*/}
+            {/*    <TextField.Input type="number" placeholder="Margin top"*/}
+            {/*                     onChange={(e) => {*/}
+            {/*                         const value = e.target.value;*/}
+            {/*                         setProp((props: PropTypes) => (props.marginTop = value));*/}
+            {/*                     }}*/}
+            {/*    />*/}
+            {/*</TextField.Root>*/}
+            {/*<Text>Margin Right</Text>*/}
+            {/*<TextField.Root>*/}
+            {/*    <TextField.Input type="number" placeholder="Margin right"*/}
+            {/*                     onChange={(e) => {*/}
+            {/*                         const value = e.target.value;*/}
+            {/*                         setProp((props: PropTypes) => (props.marginRight = value));*/}
+            {/*                     }}*/}
+            {/*    />*/}
+            {/*</TextField.Root>*/}
+            {/*<Text>Margin Bottom</Text>*/}
+            {/*<TextField.Root>*/}
+            {/*    <TextField.Input type="number" placeholder="Margin bottom"*/}
+            {/*                     onChange={(e) => {*/}
+            {/*                         const value = e.target.value;*/}
+            {/*                         setProp((props: PropTypes) => (props.marginBottom = value));*/}
+            {/*                     }}*/}
+            {/*    />*/}
+            {/*</TextField.Root>*/}
+            {/*<Text>Margin Left</Text>*/}
+            {/*<TextField.Root>*/}
+            {/*    <TextField.Input type="number" placeholder="Margin left"*/}
+            {/*                     onChange={(e) => {*/}
+            {/*                         const value = e.target.value;*/}
+            {/*                         setProp((props: PropTypes) => (props.marginLeft = value));*/}
+            {/*                     }}*/}
+            {/*    />*/}
+            {/*</TextField.Root>*/}
+
             <Select.Root defaultValue="400" onValueChange={(value) => {
                 setProp((props: PropTypes) => (props.fontWeight = value));
             }}>
