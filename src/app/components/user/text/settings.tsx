@@ -14,78 +14,18 @@ export const Settings = () => {
 
     return (
         <Box>
-            <SettingItem propKey="fontSize" type="slider" label="Font Size"/>
+            <SettingItem propKey="fontSize" type="slider" label="Font Size" defaultValue={16}/>
             <SettingItem propKey="textColor" type="color" label="Text Color"/>
             <SettingItem propKey="marginTop" type="number" label="Margin Top"/>
             <SettingItem propKey="marginRight" type="number" label="Margin Right"/>
             <SettingItem propKey="marginBottom" type="number" label="Margin Bottom"/>
             <SettingItem propKey="marginLeft" type="number" label="Margin Left"/>
-
-            {/*<Text>Font Size</Text>*/}
-            {/*<Flex direction="column" style={{height: 15}}>*/}
-            {/*    <Slider defaultValue={[18]}*/}
-            {/*            onValueChange={(value) => setProp((props: PropTypes) => (props.fontSize = String(value[0])))}/>*/}
-            {/*</Flex>*/}
-            {/**/}
-            {/*<Text>Text Color</Text>*/}
-            {/*<TextField.Root>*/}
-            {/*    <TextField.Input type="color" placeholder="Text color"*/}
-            {/*                     onChange={(e) => {*/}
-            {/*                         const value = e.target.value;*/}
-            {/*                         setProp((props: PropTypes) => (props.textColor = value));*/}
-            {/*                     }}*/}
-            {/*    />*/}
-            {/*</TextField.Root>*/}
-            {/**/}
-            {/*<Text>Margin Top</Text>*/}
-            {/*<TextField.Root>*/}
-            {/*    <TextField.Input type="number" placeholder="Margin top"*/}
-            {/*                     onChange={(e) => {*/}
-            {/*                         const value = e.target.value;*/}
-            {/*                         setProp((props: PropTypes) => (props.marginTop = value));*/}
-            {/*                     }}*/}
-            {/*    />*/}
-            {/*</TextField.Root>*/}
-            {/*<Text>Margin Right</Text>*/}
-            {/*<TextField.Root>*/}
-            {/*    <TextField.Input type="number" placeholder="Margin right"*/}
-            {/*                     onChange={(e) => {*/}
-            {/*                         const value = e.target.value;*/}
-            {/*                         setProp((props: PropTypes) => (props.marginRight = value));*/}
-            {/*                     }}*/}
-            {/*    />*/}
-            {/*</TextField.Root>*/}
-            {/*<Text>Margin Bottom</Text>*/}
-            {/*<TextField.Root>*/}
-            {/*    <TextField.Input type="number" placeholder="Margin bottom"*/}
-            {/*                     onChange={(e) => {*/}
-            {/*                         const value = e.target.value;*/}
-            {/*                         setProp((props: PropTypes) => (props.marginBottom = value));*/}
-            {/*                     }}*/}
-            {/*    />*/}
-            {/*</TextField.Root>*/}
-            {/*<Text>Margin Left</Text>*/}
-            {/*<TextField.Root>*/}
-            {/*    <TextField.Input type="number" placeholder="Margin left"*/}
-            {/*                     onChange={(e) => {*/}
-            {/*                         const value = e.target.value;*/}
-            {/*                         setProp((props: PropTypes) => (props.marginLeft = value));*/}
-            {/*                     }}*/}
-            {/*    />*/}
-            {/*</TextField.Root>*/}
-
-            <Select.Root defaultValue="400" onValueChange={(value) => {
-                setProp((props: PropTypes) => (props.fontWeight = value));
-            }}>
-                <Select.Trigger/>
-                <Select.Content>
-                    <Select.Group>
-                        <Select.Item value="400">Default</Select.Item>
-                        <Select.Item value="500">Medium</Select.Item>
-                        <Select.Item value="600">Bold</Select.Item>
-                    </Select.Group>
-                </Select.Content>
-            </Select.Root>
+            <SettingItem propKey="fontWeight" type="select" label="Font Weight" defaultValue={400}
+                         options={[
+                             {value: 400, label: 'Default'},
+                             {value: 500, label: 'Medium'},
+                             {value: 600, label: 'Bold'}
+                         ]}/>
         </Box>
     );
 };

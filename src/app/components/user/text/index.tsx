@@ -1,6 +1,7 @@
 import { useNode } from "@craftjs/core";
 import { Text as RadixText } from "@radix-ui/themes";
-import React, {useEffect} from "react";
+import React from "react";
+
 import { Settings } from "./settings";
 
 export type RadixTextPropTypes = React.ComponentProps<typeof RadixText>;
@@ -20,11 +21,6 @@ export const Text = ({ children, marginTop, marginRight, marginLeft, marginBotto
   const {
     connectors: { connect, drag },
   } = useNode();
-
-    useEffect(() => {
-        console.log(fontSize)
-        console.log(marginTop)
-    }, [fontSize, marginTop]);
 
   return (
     <RadixText
