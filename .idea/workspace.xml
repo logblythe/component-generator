@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68884f3e-6979-4d5a-b690-78aaa32b1e5b" name="Changes" comment="Common setting" />
+    <list default="true" id="68884f3e-6979-4d5a-b690-78aaa32b1e5b" name="Changes" comment="Common setting">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/user/button/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/user/button/settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/user/resizable-container/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/user/resizable-container/settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/user/settings/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/user/settings/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/user/text/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/user/text/settings.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +26,24 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feat/component-styles" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "zatilstha"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a8b9dcf1-8f55-480d-a94c-3ef982544d74" />
+        <option name="url" value="https://github.com/logblythe/component-generator" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,7 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat/component-styles",
+    "git-widget-placeholder": "feat/common-styles",
     "last_opened_file_path": "/Users/zshrestha/Documents/Projetcts/component-generator/src/app/components/user/settings",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -102,6 +122,8 @@
       <workItem from="1705414177953" duration="1853000" />
       <workItem from="1705676728397" duration="25000" />
       <workItem from="1705676759952" duration="7472000" />
+      <workItem from="1706279056785" duration="6065000" />
+      <workItem from="1706289176880" duration="4122000" />
     </task>
     <task id="LOCAL-00001" summary="Individual button and text settings">
       <option name="closed" value="true" />

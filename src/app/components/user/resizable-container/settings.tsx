@@ -1,135 +1,49 @@
-import { useNode } from "@craftjs/core";
-import { Box, Flex, Grid, RadioGroup, Text } from "@radix-ui/themes";
+import {useNode} from "@craftjs/core";
+import {Box, Flex, Grid, RadioGroup, Text} from "@radix-ui/themes";
 
-import { ContainerProps } from ".";
+import {ContainerProps} from ".";
+import {SettingItem} from "../settings";
 
 export const Settings = () => {
-  const {
-    actions: { setProp },
-    props,
-  } = useNode((node) => ({
-    props: node.data.props,
-  }));
+    const {
+        actions: {setProp},
+        props,
+    } = useNode((node) => ({
+        props: node.data.props,
+    }));
 
-  return (
-    <Flex gap="4" direction="column">
-      <Box>
-        <Text>Flex-Direction</Text>
-        <RadioGroup.Root
-          defaultValue={props.flexDirection}
-          onValueChange={(flexDirection) => {
-            setProp(
-              (props: ContainerProps) => (props.flexDirection = flexDirection)
-            );
-          }}
-        >
-          <Grid gap="2" columns="2">
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="row" /> row
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="column" /> column
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="row-reverse" /> row-reverse
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="column-reverse" /> column-reverse
-              </Flex>
-            </Text>
-          </Grid>
-        </RadioGroup.Root>
-      </Box>
+    return (
+        <Flex gap="4" direction="column">
+            <Box>
+                <SettingItem propKey="flexDirection" type="radio" label="Flex-Direction" defaultValue={'row'}
+                             options={[
+                                 {value: 'row', label: 'row'},
+                                 {value: 'column', label: 'column'},
+                                 {value: 'row-reverse', label: 'row-reverse'},
+                                 {value: 'column-reverse', label: 'column-reverse'}
+                             ]}/>
 
-      <Box>
-        <Text>Align-items</Text>
-        <RadioGroup.Root
-          defaultValue={props.alignItems}
-          onValueChange={(alignItems) => {
-            setProp((props: ContainerProps) => (props.alignItems = alignItems));
-          }}
-        >
-          <Grid gap="2" columns="2">
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="flex-start" /> flex-start
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="flex-end" /> flex-end
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="center" /> center
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="stretch" /> stretch
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="baseline" /> baseline
-              </Flex>
-            </Text>
-          </Grid>
-        </RadioGroup.Root>
-      </Box>
+                <SettingItem propKey="alignItems" type="radio" label="Align-items"
+                             options={[
+                                 {value: 'flex-start', label: 'flex-start'},
+                                 {value: 'flex-end', label: 'flex-end'},
+                                 {value: 'center', label: 'center'},
+                                 {value: 'stretch', label: 'stretch'},
+                                 {value: 'baseline', label: 'baseline'},
+                             ]}/>
 
-      <Box>
-        <Text>Justify-Content</Text>
-        <RadioGroup.Root
-          defaultValue={props.justifyContent}
-          onValueChange={(justifyContent) => {
-            setProp(
-              (props: ContainerProps) => (props.justifyContent = justifyContent)
-            );
-          }}
-        >
-          <Grid gap="2" columns="2">
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="flex-start" /> flex-start
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="flex-end" /> flex-end
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="center" /> center
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="space-between" /> space-between
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="space-around" /> space-around
-              </Flex>
-            </Text>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <RadioGroup.Item value="space-evenly" /> space-evenly
-              </Flex>
-            </Text>
-          </Grid>
-        </RadioGroup.Root>
-      </Box>
-    </Flex>
-  );
+                <SettingItem propKey="justifyContent" type="radio" label="Justify-Content"
+                             options={[
+                                 {value: 'flex-start', label: 'flex-start'},
+                                 {value: 'flex-end', label: 'flex-end'},
+                                 {value: 'center', label: 'center'},
+                                 {value: 'space-between', label: 'space-between'},
+                                 {value: 'space-around', label: 'space-around'},
+                                 {value: 'space-evenly', label: 'space-evenly'},
+                                 {value: 'baseline', label: 'baseline'},
+                             ]}/>
+
+            </Box>
+        </Flex>
+    );
 };
