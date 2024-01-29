@@ -24,7 +24,7 @@ export const SettingsPanel = () => {
   });
 
   return selected ? (
-    <Flex direction="column">
+    <Flex direction="column" className="pt-3 p-4">
       <Text>Settings</Text>
       {selected.settings && React.createElement(selected.settings)}
       {selected.isDeletable ? (
