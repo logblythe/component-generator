@@ -59,6 +59,7 @@ export const ResizableContainer = (props: Partial<ContainerProps>) => {
     radius,
     children,
   } = props;
+  console.log(justifyContent)
   return (
     <Resizer
       propKey={{ width: "width", height: "height" }}

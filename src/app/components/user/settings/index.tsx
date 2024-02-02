@@ -2,8 +2,6 @@ import {useNode} from "@craftjs/core";
 import {Box, Flex, Grid, Select, Slider, Text, TextField, RadioGroup} from "@radix-ui/themes";
 import React, {useState} from "react";
 
-import {PropTypes} from "@/app/components/user/text";
-
 export type IProps = {
     propKey: string;
     type: string;
@@ -42,7 +40,8 @@ export const SettingItem = ({
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                     <Text>{label}</Text>
                     <TextField.Root>
-                        <TextField.Input type="color" size="1" radius="none" style={{width: 20}}
+                        <TextField.Input className="color-picker" type="color" size="1" radius="none"
+                                         style={{width: 20}}
                                          value={initialValue ?? ""}
                                          onChange={(e) => {
                                              const value = e.target.value;
@@ -66,6 +65,45 @@ export const SettingItem = ({
                                                  setProp((props: PropTypes) => (props[propKey] = value));
                                              }}
                             />
+                        </TextField.Root>
+                    ) : type === 'numbers' ? (
+                        <TextField.Root>
+                            <TextField.Input type="number" className="px-2 input-border" placeholder="T"
+                                             value={initialValue[0]}
+                                             onChange={(e) => {
+                                                 let newValue = [...initialValue];
+                                                 newValue[0] = e.target.value;
+                                                 setInitialValue(newValue)
+                                                 // @ts-ignore
+                                                 setProp((props: PropTypes) => (props[propKey] = newValue));
+                                             }}/>
+                            <TextField.Input type="number" className="px-2 input-border" placeholder="L"
+                                             value={initialValue[1]}
+                                             onChange={(e) => {
+                                                 let newValue = [...initialValue];
+                                                 newValue[1] = e.target.value;
+                                                 setInitialValue(newValue)
+                                                 // @ts-ignore
+                                                 setProp((props: PropTypes) => (props[propKey] = newValue));
+                                             }}/>
+                            <TextField.Input type="number" className="px-2 input-border" placeholder="B"
+                                             value={initialValue[2]}
+                                             onChange={(e) => {
+                                                 let newValue = [...initialValue];
+                                                 newValue[2] = e.target.value
+                                                 setInitialValue(newValue)
+                                                 // @ts-ignore
+                                                 setProp((props: PropTypes) => (props[propKey] = newValue));
+                                             }}/>
+                            <TextField.Input type="number" className="px-2 input-border" placeholder="R"
+                                             value={initialValue[3]}
+                                             onChange={(e) => {
+                                                 let newValue = [...initialValue];
+                                                 newValue[3] = e.target.value
+                                                 setInitialValue(newValue)
+                                                 // @ts-ignore
+                                                 setProp((props: PropTypes) => (props[propKey] = newValue));
+                                             }}/>
                         </TextField.Root>
                     ) : type === 'slider' ? (
                         <Flex direction="column" className="mt-1" style={{height: 15}}>
@@ -105,7 +143,7 @@ export const SettingItem = ({
                         >
                             <Grid gap="2" columns="2">
                                 {options?.map(item => (
-                                    <Text as="label" size="2">
+                                    <Text as="label" size="2" key={item.value}>
                                         <Flex gap="2">
                                             <RadioGroup.Item value={item.value}/> {item.label}
                                         </Flex>

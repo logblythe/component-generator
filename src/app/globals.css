@@ -33,3 +33,13 @@ body {
   content: " ";
   @apply border-blue-500 border border-dashed w-full h-full absolute left-0 top-0 pointer-events-none block;
 }
+
+.color-picker div {
+  background: none;
+  box-shadow: none;
+}
+
+.input-border {
+  border-radius: 0;
+  border-color: #e5e7eb;
+}

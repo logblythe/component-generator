@@ -9,10 +9,8 @@ export const Settings = () => {
         <Box>
             <SettingItem propKey="fontSize" type="slider" label="Font Size" defaultValue={16}/>
             <SettingItem propKey="textColor" type="color" label="Text Color"/>
-            <SettingItem propKey="marginTop" type="number" label="Margin Top"/>
-            <SettingItem propKey="marginRight" type="number" label="Margin Right"/>
-            <SettingItem propKey="marginBottom" type="number" label="Margin Bottom"/>
-            <SettingItem propKey="marginLeft" type="number" label="Margin Left"/>
+            <SettingItem propKey="padding" type="numbers" label="Padding" defaultValue={["0","0","0","0"]}/>
+            <SettingItem propKey="margin" type="numbers" label="Margin" defaultValue={["0","0","0","0"]}/>
             <SettingItem propKey="fontWeight" type="radio" label="Font Weight" defaultValue={400}
                          options={[
                              {value: 400, label: 'Default'},

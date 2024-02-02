@@ -8,16 +8,12 @@ export type StyleProps = {
   backgroundColor?: string; // TODO: this should accept only possible color values. Currently, it accepts anything.
 
   //padding props
-  paddingX?: string; //TODO: We should also support individual padding values, like we have done for the margins.
-  paddingY?: string;
+  padding?: string[];
 
   //border props
   borderRadius?: string;
   borderColor?: string; // TODO: this should accept only possible color values. Currently, it accepts anything.
 
   //margin props
-  marginTop?: string; //TODO: We should also support combined horizontal and vertical margins like we have done for the padding.
-  marginRight?: string;
-  marginBottom?: string;
-  marginLeft?: string;
+  margin?: string[];
 };
