@@ -22,14 +22,11 @@ export const Text = ({ text, ...rest }: PropTypes) => {
   }));
 
   const {
-    marginTop,
-    marginRight,
-    marginLeft,
-    marginBottom,
+    padding,
+    margin,
     textColor,
     fontWeight,
     fontSize,
-    textAlign,
   } = rest;
 
   return (
@@ -42,10 +39,8 @@ export const Text = ({ text, ...rest }: PropTypes) => {
       }} // use true to disable editing
       tagName="h2" // Use a custom HTML tag (uses a div by default)
       style={{
-        marginTop: `${marginTop}px`,
-        marginRight: `${marginRight}px`,
-        marginBottom: `${marginBottom}px`,
-        marginLeft: `${marginLeft}px`,
+        padding: padding?.map(value => `${value}px`).join(' ') ?? 0,
+        margin: margin?.map(value => `${value}px`).join(' ') ?? 0,
         color: `${textColor}`,
         fontSize: `${fontSize}px`,
         fontWeight: fontWeight,

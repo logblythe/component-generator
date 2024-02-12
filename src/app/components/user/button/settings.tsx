@@ -1,109 +1,24 @@
-import { useNode } from "@craftjs/core";
-import { Box, Flex, Select, Slider, Text, TextField } from "@radix-ui/themes";
-
-import { PropTypes } from "./index";
+import {Box} from "@radix-ui/themes";
+import {SettingItem} from "../settings";
 
 export const Settings = () => {
-  const {
-    actions: { setProp },
-    props,
-  } = useNode((node) => ({
-    props: node.data.props,
-  }));
 
-  return (
-    <Box>
-      <Text>Font Size</Text>
-      <Flex direction="column">
-        <Slider
-          defaultValue={[18]}
-          onValueChange={(value) =>
-            setProp((props: PropTypes) => (props.fontSize = String(value[0])))
-          }
-        />
-      </Flex>
-      <Text>Border Radius</Text>
-      <TextField.Root>
-        <TextField.Input
-          type="number"
-          placeholder="Border radius"
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.borderRadius = value));
-          }}
-        />
-      </TextField.Root>
-      <Text>Text Color</Text>
-      <TextField.Root>
-        <TextField.Input
-          type="color"
-          placeholder="Text color"
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.textColor = value));
-          }}
-        />
-      </TextField.Root>
-
-      <Text>Background Color</Text>
-      <TextField.Root>
-        <TextField.Input
-          type="color"
-          placeholder="Background color"
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.backgroundColor = value));
-          }}
-        />
-      </TextField.Root>
-      <Text>Border Color</Text>
-      <TextField.Root>
-        <TextField.Input
-          type="color"
-          placeholder="Border color"
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.borderColor = value));
-          }}
-        />
-      </TextField.Root>
-      <Text>Padding x-axis</Text>
-      <TextField.Root>
-        <TextField.Input
-          type="number"
-          placeholder="Padding top"
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.paddingX = value));
-          }}
-        />
-      </TextField.Root>
-      <Text>Padding y-axis</Text>
-      <TextField.Root>
-        <TextField.Input
-          type="number"
-          placeholder="Padding right"
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.paddingY = value));
-          }}
-        />
-      </TextField.Root>
-      <Select.Root
-        defaultValue="400"
-        onValueChange={(value) => {
-          setProp((props: PropTypes) => (props.fontWeight = value));
-        }}
-      >
-        <Select.Trigger />
-        <Select.Content>
-          <Select.Group>
-            <Select.Item value="400">Default</Select.Item>
-            <Select.Item value="500">Medium</Select.Item>
-            <Select.Item value="600">Bold</Select.Item>
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
-    </Box>
-  );
+    return (
+        <Box>
+            <SettingItem propKey="fontSize" type="slider" label="Font Size" defaultValue={16}/>
+            <SettingItem propKey="borderRadius" type="number" label="Border Radius"/>
+            <SettingItem propKey="lineHeight" type="number" label="Line Height"/>
+            <SettingItem propKey="textColor" type="color" label="Text color"/>
+            <SettingItem propKey="backgroundColor" type="color" label="Background Color"/>
+            <SettingItem propKey="borderColor" type="color" label="Border Color"/>
+            <SettingItem propKey="padding" type="numbers" label="Padding" defaultValue={["0", "10", "0", "10"]}/>
+            <SettingItem propKey="margin" type="numbers" label="Margin" defaultValue={["5", "0", "5", "0"]}/>
+            <SettingItem propKey="fontWeight" type="radio" label="Font Weight" defaultValue={400}
+                         options={[
+                             {value: 400, label: 'Default'},
+                             {value: 500, label: 'Medium'},
+                             {value: 600, label: 'Bold'}
+                         ]}/>
+        </Box>
+    );
 };
