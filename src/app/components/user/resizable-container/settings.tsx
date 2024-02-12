@@ -1,7 +1,6 @@
 import {useNode} from "@craftjs/core";
-import {Box, Flex, Grid, RadioGroup, Text} from "@radix-ui/themes";
+import {Box, Flex} from "@radix-ui/themes";
 
-import {ContainerProps} from ".";
 import {SettingItem} from "../settings";
 
 export const Settings = () => {

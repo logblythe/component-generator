@@ -30,6 +30,7 @@ export const Button = ({text, ...rest}: PropTypes) => {
 
     return (
         <RadixButton
+            title={backgroundColor}
             ref={(ref) => connect(drag(ref as HTMLElement))}
             style={{
                 padding: padding?.map(value => `${value}px`).join(' ') ?? "0 10px",

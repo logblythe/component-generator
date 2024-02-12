@@ -2,16 +2,22 @@ import {useNode} from "@craftjs/core";
 import {Box, Flex, Grid, Select, Slider, Text, TextField, RadioGroup} from "@radix-ui/themes";
 import React, {useState} from "react";
 
+export type IOptionsType = {
+    label: string,
+    value: string|number
+}
+
 export type IProps = {
     propKey: string;
     type: string;
     label?: string;
+    // defaultValue?: string|number|string[]|number[]|undefined|null|object; //TODO:: these are nor accepting
     defaultValue?: any;
-    options?: any[];
+    options?: IOptionsType[];
     prefix?: string;
     index?: number;
     children?: React.ReactNode;
-    onChange?: (value: any) => any;
+    onChange?: (value: any) => any; //TODO:: not able to replace any here
 };
 export const SettingItem = ({
                                 propKey,

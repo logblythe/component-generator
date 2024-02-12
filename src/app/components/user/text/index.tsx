@@ -27,7 +27,6 @@ export const Text = ({ text, ...rest }: PropTypes) => {
     textColor,
     fontWeight,
     fontSize,
-    textAlign,
   } = rest;
 
   return (
